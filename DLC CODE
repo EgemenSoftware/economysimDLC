@@ -1,0 +1,32 @@
+from tkinter import *
+egemen = Tk()
+egemen.geometry("512x512")
+bg = PhotoImage(file = "unnamed.png")
+
+canvas1 = Canvas( egemen, width = 400,
+				height = 400)
+
+canvas1.pack(fill = "both", expand = True)
+canvas1.create_image( 0, 0, image = bg,
+					anchor = "nw")
+
+canvas1.create_text( 200, 250, text = "Hello")
+
+button1 = Button( egemen, text = "Exit")
+button3 = Button( egemen, text = "Start")
+button2 = Button( egemen, text = "Reset")
+
+button1_canvas = canvas1.create_window( 100, 10,
+									anchor = "nw",
+									window = button1)
+
+button2_canvas = canvas1.create_window( 100, 40,
+									anchor = "nw",
+									window = button2)
+
+button3_canvas = canvas1.create_window( 100, 70, anchor = "nw",
+									window = button3)
+
+
+egemen.mainloop()
+
